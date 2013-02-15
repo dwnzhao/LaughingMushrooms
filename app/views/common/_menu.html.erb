@@ -1,0 +1,22 @@
+<div class="span2">
+	<div class="hero-unit">
+		<%= link_to_unless_current("home", home_path, {:class => "menu"}) do%>
+		<span class="menu">		
+			<i class="icon-folder-close"></i> home
+		</span>		
+		<%end%>
+		<br>
+
+		<%= link_to_unless_current("archive", archived_path, {:class => "menu"}) do%>
+		<span class="menu">
+			<i class="icon-folder-close"></i> archived
+		</span>
+		<%end%>					
+
+		<br>
+
+		<%= link_to_unless_current("logout", {:action => 'logout', :controller => 'access'}, {:class => "menu"}) do%>
+		<i class="icon-off"></i> logout
+		<%end%>
+	</div>    
+</div>

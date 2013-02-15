@@ -1,0 +1,59 @@
+$margin: 5%; 
+$margin-top: 20px;
+$form-min-width: 400px;
+$form-width: 600px;
+$panel-width: 800px;
+$panel-min-width: 600px;
+$menu-font-size: .8em;
+$source-link-size: .6em;
+
+
+/*-------------------------------*/
+
+.menu {font-size: $menu-font-size; font-weight: bold;}
+
+.alert{
+	text-align:center;
+}
+
+.source_link {
+font-size: $source-link-size;
+}
+
+.right-align{
+text-align: right;
+margin-right: $margin;
+}
+
+.invisible{
+display: none;
+}
+
+.visible{
+display: block;
+}
+
+.hero-unit{
+margin-top: $margin-top;
+}
+
+.control-group{
+text-align: left; 
+margin-left: $margin;
+}
+
+.form{
+min-width: $form-min-width; 
+width: $form-width; 
+overflow: hidden; 
+}
+
+.panel{
+min-width: $panel-min-width; 
+width: $panel-width; 
+overflow: hidden; 
+margin-left:auto;
+margin-right:auto;
+text-align: center;
+padding: 50px 150px 50px 150px;
+}
