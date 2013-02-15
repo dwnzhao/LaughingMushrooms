@@ -5,7 +5,7 @@
 		<div class="span10">
 			<div class="hero-unit panel">
 
-				<p class="lead">{{title}}</p>
+				<p class="lead">archived feeds</p>
 
 				<p>
 					<input type="text" style="width: 800px" ng-model="search" placeholder="filter posts">
@@ -13,17 +13,24 @@
 
 				<blockquote style="text-align: left" ng-repeat="post in posts | filter:search">
 
-					<p class=lead>{{post.header}} <span class="source_link">from <a target="_blank" href = {{highlight.url}}>{{post.url}}</a></p></span>
+					<p class=lead>{{post.header}} |
+						<span class="source_link">
+							from <a target="_blank" href = {{highlight.url}}>{{post.url}}</a>
+						</span>
+					</p>
 					{{post.body}} 
 
+					<br> 
 					<br> 
 
 
 					<button class="btn btn-success btn-mini" ng-click="dearchivePost(post)">dearchive</button>
 					<button class="btn btn-danger btn-mini" ng-click="deletePost(post.id)">delete</button>
+					<br> 
+					<br> 
 
-					<hr>
 				</blockquote>
+
 			</div>
 		</div>
 	</div>

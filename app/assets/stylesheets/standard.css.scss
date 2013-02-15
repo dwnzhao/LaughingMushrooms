@@ -18,6 +18,12 @@ $source-link-size: .6em;
 
 .source_link {
 font-size: $source-link-size;
+padding: 3px;
+}
+
+blockquote{
+text-align: left; 
+border-bottom: 1px solid #D8D8D8;
 }
 
 .right-align{
