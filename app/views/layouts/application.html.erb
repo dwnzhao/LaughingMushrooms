@@ -20,9 +20,24 @@
 		<%= flash[:notice]%>
 	</div>
 	<%end%>
-	
 
+	<%if session[:user_id]%>
+	<div class="container-fluid" >
+		<div class="row-fluid">
+			<div class="span2">
+				<%= render "common/menu" %>
+				<%= render "common/activities_feed"%>
+			</div>
+
+			<%= yield %>
+
+		</div>
+	</div>
+
+	<%else%>
 	<%= yield %>
+
+	<%end%>
 
 </body>
 </html>

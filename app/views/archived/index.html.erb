@@ -1,37 +1,22 @@
-<div class="container-fluid" ng-controller = "ArchivedCtrl">
-	<div class="row-fluid">
-		<%= render "common/menu" %>
+<div class="span10">
+	<div class="hero-unit panel" ng-controller = "ArchivedCtrl">
 
-		<div class="span10">
-			<div class="hero-unit panel">
+		<p class="lead">archived feeds</p>
 
-				<p class="lead">archived feeds</p>
+		<%= filter_bar%>
 
-				<p>
-					<input type="text" style="width: 800px" ng-model="search" placeholder="filter posts">
-				</p>
+		<blockquote style="text-align: left" ng-repeat="post in posts | filter:search">
 
-				<blockquote style="text-align: left" ng-repeat="post in posts | filter:search">
+			<%= render "common/post"%>
 
-					<p class=lead>{{post.header}} |
-						<span class="source_link">
-							from <a target="_blank" href = {{highlight.url}}>{{post.url}}</a>
-						</span>
-					</p>
-					{{post.body}} 
+			<br><br> 
 
-					<br> 
-					<br> 
+			<%= dearchive_btn%>
+			<%= delete_btn%>
+			
+			<br><br> 
 
+		</blockquote>
 
-					<button class="btn btn-success btn-mini" ng-click="dearchivePost(post)">dearchive</button>
-					<button class="btn btn-danger btn-mini" ng-click="deletePost(post.id)">delete</button>
-					<br> 
-					<br> 
-
-				</blockquote>
-
-			</div>
-		</div>
 	</div>
 </div>

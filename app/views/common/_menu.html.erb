@@ -1,32 +1,38 @@
-<div class="span2">
 
-	<div class="hero-unit" style="padding: 10px; border-left: 5px solid #6699FF">
-		
-		<ul class="nav nav-list">
-			<li>
-				<%= link_to_unless_current("home", home_path, {:class => "menu"}) do%>
-				<span class="menu">		
-					<i class="icon-home"></i> home
-				</span>		
+<div class="hero-unit menu-pane">
+
+	<ul class="nav nav-list">
+		<li>
+			<%= link_to_unless_current("home", home_path, {:class => "menu"}) do%>
+			<span class="menu">		
+				<i class="icon-home"></i> home
+			</span>		
+			<%end%>
+		</li>
+
+		<li>
+			<%= link_to_unless_current("archive", archived_path, {:class => "menu"}) do%>
+			<span class="menu">
+				<i class="icon-folder-open"></i> archived
+			</span>
+			<%end%>					
+		</li>
+
+		<li>
+			<%= link_to_unless_current("friends", {:action => 'friends', :controller => 'organize'}, {:class => "menu"}) do%>
+			<span class="menu">
+				<i class="icon-user"></i> friends
+			</span>
+			<%end%>					
+		</li>
+
+		<li>
+			<%= link_to_unless_current("logout", {:action => 'logout', :controller => 'access'}, {:class => "menu"}) do%>
+			<span class="menu">
+				<i class="icon-off"></i> logout
 				<%end%>
-			</li>
+			</span>
+		</li>
 
-			<li>
-				<%= link_to_unless_current("archive", archived_path, {:class => "menu"}) do%>
-				<span class="menu">
-					<i class="icon-folder-open"></i> archived
-				</span>
-				<%end%>					
-			</li>
-
-			<li>
-				<%= link_to_unless_current("logout", {:action => 'logout', :controller => 'access'}, {:class => "menu"}) do%>
-				<span class="menu">
-					<i class="icon-off"></i> logout
-					<%end%>
-				</span>
-			</li>
-
-		</ul>  
-	</div>  
-</div>
+	</ul>  
+</div>  

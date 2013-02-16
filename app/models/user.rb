@@ -12,7 +12,10 @@ class User < ActiveRecord::Base
   validates_length_of :password, :within => 5..25, :on => :create
 
   has_attached_file :avatar, :styles => { :medium => '300x300>', :thumb => '100x100>' }
-
+  has_many :created_posts, :class_name => 'Post', :foreign_key => 'creator_id', :order => 'updated_at DESC', :dependent => :destroy 
+  has_and_belongs_to_many :posts
+  
+  
   before_save :create_hashed_password
   after_save :clear_password
 

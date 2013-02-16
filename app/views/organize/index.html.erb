@@ -1,42 +1,22 @@
-<div class="container-fluid" ng-controller = "OrganizeCtrl">
-	<div class="row-fluid">
-		<%= render "common/menu" %>
+<div class="span10">
+	<div class="hero-unit panel" ng-controller = "OrganizeCtrl">
 
-		<div class="span10">
+		<p class="lead">
+			hi <%= user.first_name.capitalize%>, your friends think you will enjoy these...				
+		</p>
 
-			<div class="hero-unit panel">
+		<%= filter_bar%>
 
-				<p class="lead">
-					hi <%= user.first_name.capitalize%>, your friends think you will enjoy these...				
-				</p>
+		<blockquote ng-repeat="post in posts | filter:search">
+			<%= render "common/post"%>
 
-				<p>
-					<input type="text" style="width: 800px" ng-model="search" placeholder="filter posts">
-				</p>
+			<br><br> 
+			<%= archive_btn%>
+			<%= delete_btn%>
+			<br><br> 
 
-				<blockquote ng-repeat="post in posts | filter:search">
+		</blockquote>
 
-					<p class=lead>{{post.header}} | 
-						<span class="source_link">
-							from <a target="_blank" href = {{highlight.url}}>{{post.url}}</a>
-						</span>
-					</p>
-
-					{{post.body}} 
-
-					<br> 
-					<br> 
-
-					<button class="btn btn-success btn-mini" ng-click="archivePost(post)">archive</button>
-					<button class="btn btn-danger btn-mini" ng-click="deletePost(post.id)">delete</button>
-					<br> 
-					<br> 
-
-				</blockquote>
-			</div>
-
-
-		</div>
 	</div>
 </div>
 

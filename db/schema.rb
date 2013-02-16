@@ -14,15 +14,21 @@
 ActiveRecord::Schema.define(:version => 20130215052633) do
 
   create_table "posts", :force => true do |t|
-    t.integer  "reader_id"
     t.integer  "creator_id"
     t.string   "header"
     t.string   "body"
     t.string   "url"
-    t.boolean  "archived"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "archived",   :default => false, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
+
+  create_table "posts_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+  end
+
+  add_index "posts_users", ["user_id", "post_id"], :name => "index_posts_users_on_user_id_and_post_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name",          :limit => 25

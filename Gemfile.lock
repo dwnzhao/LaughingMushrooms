@@ -82,17 +82,27 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    ZenTest (4.8.3)
     angular-rails (0.0.12)
       coffee-script (~> 2.2.0)
       rails
+    autotest-rails (4.1.2)
+      ZenTest (~> 4.5)
+    better_errors (0.6.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.6.9)
+      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     cocaine (0.4.2)
+    coderay (1.0.8)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
     commonjs (0.2.6)
     daemons (1.1.9)
+    debug_inspector (0.0.2)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -165,8 +175,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ZenTest (~> 4.8.3)
   angular-rails
   arel!
+  autotest-rails
+  better_errors
+  binding_of_caller
   coffee-rails!
   journey!
   jquery-rails
