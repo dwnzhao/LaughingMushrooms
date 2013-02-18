@@ -11,3 +11,4 @@ Post.create!(archived: "false", header: "read this", body: "see", url: "http://w
 Post.create!(archived: "false", header: "read this", body: "plus", url: "http://www.google.com", creator_id: creator1.id)
 Post.create!(archived: "false", header: "read this", body: "haha", url: "http://www.google.com", creator_id: creator1.id)
 
+Comment.create!(content: "this is really cool", post_id: 1, author_id: creator1.id, author_name: "dawn")

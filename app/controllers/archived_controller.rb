@@ -1,3 +1,2 @@
 class ArchivedController < ApplicationController
-  
 end

@@ -25,4 +25,7 @@
 
 		$scope.posts = Post.archived()
 	
+	$scope.likeTogglePost = (post) ->
+		post.liked = !post.liked
+		post.$update()
 ]

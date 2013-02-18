@@ -1,0 +1,9 @@
+
+<div ng-controller="commentCtrl">
+<a ng-hide="commentMode" ng-click="commentMode=true"><i class="icon-comment"></i></a>
+
+<div ng-show="commentMode">
+<textarea ng-model="comment"></textarea>
+<button ng-click="commentSubmit(comment, post.id); commentMode=false" class="btn btn-mini">add comment</button>
+</div>
+</div>

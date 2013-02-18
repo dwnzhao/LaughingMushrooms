@@ -1,9 +1,16 @@
 <% @page_title ="Sign Up"%>
 
 <div class="hero-unit form">
+	<% if current_page?("signup")%>
 	<p class="lead">Sign Up </p>
+	<%else%>
+	<p class="lead">Profile </p>
+	<%end%>
+
 
 	<hr><br/>
+
+	<%= error_messages_for(@user)%>
 
 	<%= form_for :user, :url => {:action => 'create'}, :html => {:class => 'form-horizontal'} do |f| %>
 
@@ -24,9 +31,11 @@
 	<div class="control-group">
 		<%= f.label(:email, "Email*", :class=> 'control-label')%>
 		<div class="controls">
-			<%= f.text_field(:email)%>
+			<%= f.email_field(:email)%>
 		</div>
 	</div>
+
+	<% if current_page?("signup")%>
 
 	<div class="control-group">
 		<%= f.label(:password, "Password*", :class=> 'control-label')%>
@@ -42,20 +51,26 @@
 	</div>				
 
 
-	<%= f.check_box(:terms_and_conditions)%> I agree to <a href="#">terms and conditions</a>
+	<div class="control-group">
+		<div class="controls">
+			<%= f.check_box(:terms_and_conditions) %> 
+			<small>I agree to <a href="#">terms and conditions</a></small>
+		</div>
+	</div>
+
 
 	<br><br>
-
-	<%= submit_tag "sign up", :class=>'button'%>
-
-	<% end %>
-	<br/><hr>
-
 	<p> 
 		<small>
 			Already have an account? <span style="text-decoration:underline;"><%= link_to('Log in', {:action => 'login'})%></span> 
 		</small>
 	</p>
 
+	<%= submit_tag "sign up", :class=>'btn btn-success'%>
+
+	<% end %>
+	<br/><hr>
+
+	<%end%>
 </div>
 

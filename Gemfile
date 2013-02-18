@@ -24,11 +24,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do 
+group :development, :test do 
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'ZenTest', "~> 4.8.3"
   gem 'autotest-rails'
+  gem "rspec-rails", "~> 2.0"
+  gem 'mocha', require: false
 end
 
 group :production do
@@ -38,6 +40,9 @@ end
 gem 'jquery-rails'
 
 gem "paperclip", "~> 3.0"
+
+gem 'rabl'
+gem 'oj'
 
 
 # To use ActiveModel has_secure_password

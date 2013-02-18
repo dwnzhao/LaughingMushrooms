@@ -11,7 +11,7 @@
 	<div class="control-group">
 		<%= label_tag 'inputEmail:', 'Email:', :class=> 'control-label'%>
 		<div class="controls">
-			<%= text_field_tag(:email, params[:email], :id => 'inputEmail')%>
+			<%= email_field_tag(:email, params[:email], :id => 'inputEmail')%>
 		</div>
 	</div>
 
@@ -23,13 +23,13 @@
 	</div>
 
 	<br>
-	<%= submit_tag "log in", :class => "btn btn-success"%>
+	<%= submit_tag "log in", :class => "btn btn-info"%>
 	<%end%>
 	<br>
 	
 	
 	<p>			
 		Need a new account? 
-		<span style="text-decoration:underline;"> <%= link_to('sign up', {:action => 'signup'})%></span> 
+		<span style="text-decoration:underline;"> <%= link_to('sign up', {:action => 'signup', :controller => 'access'})%></span> 
 	</p>
 </div>

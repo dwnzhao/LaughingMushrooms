@@ -9,11 +9,16 @@
 
 		<blockquote ng-repeat="post in posts | filter:search">
 			<%= render "common/post"%>
-
-			<br><br> 
-			<%= archive_btn%>
 			<%= delete_btn%>
-			<br><br> 
+			<%= archive_btn%> 
+			
+			<a ng-hide="post.liked" ng-click="likeTogglePost(post)"><span class="badge">like</span></a>
+			<a ng-show="post.liked" ng-click="likeTogglePost(post)"><span class="badge badge-info">like</span></a>
+
+			<hr>
+
+			<%= render "common/comment"%>
+
 
 		</blockquote>
 

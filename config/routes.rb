@@ -1,9 +1,8 @@
 LaughingMushrooms::Application.routes.draw do
-  resources :posts do
-    collection do
-      get 'archived'
-      end
-  end
+  get "comment/create"
+
+  resources :posts
+  resources :comments
   
   match ':controller(/:action(/:id))(.:format)'
 
@@ -11,6 +10,7 @@ LaughingMushrooms::Application.routes.draw do
 
   match 'home', :to => 'organize#index', :as => "home"
   match 'login', :to => 'access#login', :as => "login"
+  match 'signup', :to => 'access#signup', :as => 'signup'
   match 'archived', :to => 'archived#index', :as => 'archived'
   
   # The priority is based upon order of creation:

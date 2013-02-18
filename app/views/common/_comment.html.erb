@@ -1,0 +1,7 @@
+<div class="well well-small" ng-repeat="comment in post.comments"> 
+	<i class="icon-comment"></i>	
+	{{comment.content}}
+	<small>{{comment.author_name}} </small>
+</div>
+
+<add-comment post="post"></add-comment>

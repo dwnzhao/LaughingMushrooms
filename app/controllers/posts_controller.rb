@@ -4,18 +4,21 @@ class PostsController < ApplicationController
 
   def index
     if params[:archived]
-      respond_with Post.find_all_by_archived("true")
+      @posts = Post.find_all_by_archived(true, :order => 'created_at DESC')
     else
-      respond_with Post.find_all_by_archived("false")
+      @posts = Post.find_all_by_archived(false, :order => 'created_at DESC')
     end
+    render "post/index"
   end
 
   def destroy
-    respond_with Post.destroy(params[:id])
+    @post = Post.destroy(params[:id])
+    render "post/show"    
   end
 
   def show
-    respond_with Post.find(params[:id])
+    @post = Post.find(params[:id])
+    render "post/show"
   end
 
   def update

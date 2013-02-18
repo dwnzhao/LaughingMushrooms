@@ -1,0 +1,8 @@
+<% if object && object.errors.size > 0 %>
+<div id="errorExplanation">
+	<% object.errors.full_messages.each do |msg| %>
+
+	<p class="text-warning"><%= msg%></p>
+	<%end%>			
+</div> <hr>
+<%end %>

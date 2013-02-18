@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>LaughingMushrooms</title>
-	<%= stylesheet_link_tag    "application", :media => "all" %>
-	<%= javascript_include_tag "application" %>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application"%>
 	<%= csrf_meta_tags %>
 </head>
 <body ng-app="LaughingMushrooms">
@@ -22,7 +22,7 @@
 	<%end%>
 
 	<%if session[:user_id]%>
-	<div class="container-fluid" >
+	<div class="container-fluid" ng-controller="mainCtrl">
 		<div class="row-fluid">
 			<div class="span2">
 				<%= render "common/menu" %>

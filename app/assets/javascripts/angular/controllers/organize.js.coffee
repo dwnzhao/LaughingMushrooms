@@ -25,4 +25,9 @@
 		</div>')
 		
 		$scope.posts = Post.query()
+		
+		
+	$scope.likeTogglePost = (post) ->
+		post.liked = !post.liked
+		post.$update()
 ]

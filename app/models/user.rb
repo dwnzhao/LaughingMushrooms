@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => { :medium => '300x300>', :thumb => '100x100>' }
   has_many :created_posts, :class_name => 'Post', :foreign_key => 'creator_id', :order => 'updated_at DESC', :dependent => :destroy 
+  has_many :comments, :class_name => 'Comment', :foreign_key => 'author_id', :order => 'updated_at DESC', :dependent => :destroy 
   has_and_belongs_to_many :posts
   
   
@@ -28,7 +29,7 @@ class User < ActiveRecord::Base
     hashed_password == User.hash_with_salt(password, salt)
   end
 
-  def self.authenticate(email="", user_input_password="")
+  def self.authorize(email="", user_input_password="")
     user = User.find_by_email(email)
     if user && user.password_match?(user_input_password)
       return user

@@ -6,7 +6,7 @@ $panel-width: 800px;
 $panel-min-width: 600px;
 $menu-font-size: .8em;
 $source-link-size: .6em;
-
+$error_message_font_size: .8em;
 
 /*-------------------------------*/
 
@@ -14,9 +14,14 @@ $source-link-size: .6em;
 
 .menu-pane{
 padding: 10px; 
-border-left: 5px solid #6699FF; 
 }
 
+.btn{
+margin-left: 2px;
+}
+#errorExplanation{
+font-size: $error_message_font_size;
+}
 
 .alert{
 	text-align:center;
